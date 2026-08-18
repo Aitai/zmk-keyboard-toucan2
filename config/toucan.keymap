@@ -8,6 +8,7 @@
 #define NAV  2
 #define ADJ  3
 #define MOU  4
+#define COL  5
 
 / {
     conditional_layers {
@@ -55,7 +56,7 @@
         adjust {
             display-name = "ADJ";
             bindings = <
-&trans      &trans          &trans        &trans        &trans        &trans        &trans  &trans  &trans  &trans  &trans  &trans
+&tog COL    &trans          &trans        &trans        &trans        &trans        &trans  &trans  &trans  &trans  &trans  &trans
 &bt BT_CLR  &bt BT_SEL 0    &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4  &trans  &trans  &trans  &trans  &trans  &trans
 &trans      &studio_unlock  &trans        &trans        &trans        &trans        &trans  &trans  &trans  &trans  &trans  &trans
                                           &trans        &trans        &trans        &trans  &trans  &trans
@@ -72,7 +73,15 @@
             >;
         };
 
-        extra_2 { status = "reserved"; };
+        colemak {
+            display-name = "COL";
+            bindings = <
+&kp TAB        &kp Q  &kp W  &kp F     &kp P      &kp G    &kp J    &kp L      &kp U      &kp Y    &kp SEMI  &kp BSPC
+&mt LCTRL ESC  &kp A  &kp R  &kp S     &kp T      &kp D    &kp H    &kp N      &kp E      &kp I    &kp O     &kp RET
+&kp LSHFT      &kp Z  &kp X  &kp C     &kp V      &kp B    &kp K    &kp M      &kp COMMA  &kp DOT  &kp FSLH  &kp SINGLE_QUOTE
+                             &kp LGUI  &kp SPACE  &mo SYM  &mo NAV  &kp SPACE  &kp RALT
+            >;
+        };
 
         extra_3 { status = "reserved"; };
     };
