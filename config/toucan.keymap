@@ -45,10 +45,10 @@
         navigation {
             display-name = "NAV";
             bindings = <
-&trans  &trans  &kp C_PREV  &kp C_PLAY_PAUSE  &kp C_NEXT    &trans        &trans    &kp PAGE_UP  &kp UP         &kp PAGE_DOWN  &trans  &trans
-&trans  &trans  &kp C_MUTE  &kp C_VOL_DN      &kp C_VOL_UP  &trans        &kp HOME  &kp LEFT     &kp DOWN       &kp RIGHT      &trans  &trans
-&trans  &trans  &trans      &trans            &trans        &kp LEFT_ALT  &kp END   &kp K_BACK   &kp K_FORWARD  &trans         &trans  &trans
-                            &trans            &trans        &trans        &trans    &trans       &trans
+&trans  &trans  &kp C_PREV  &kp C_PLAY_PAUSE  &kp C_NEXT    &trans        &trans    &kp PAGE_UP    &kp UP            &kp PAGE_DOWN  &trans  &trans
+&trans  &trans  &kp C_MUTE  &kp C_VOL_DN      &kp C_VOL_UP  &trans        &kp HOME  &kp LEFT       &kp DOWN          &kp RIGHT      &trans  &trans
+&trans  &trans  &trans      &trans            &trans        &kp LEFT_ALT  &kp END   &kp C_AC_BACK  &kp C_AC_FORWARD  &trans         &trans  &trans
+                            &trans            &trans        &trans        &trans    &trans         &trans
             >;
         };
 
