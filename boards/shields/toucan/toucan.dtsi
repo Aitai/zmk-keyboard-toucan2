@@ -115,7 +115,7 @@
             #input-processor-cells = <0>;
 
             codes = <INPUT_BTN_TOUCH>;      // watch for the 'touch' pseudo button
-            bindings  = <&mo 4>;            // Layer index 4 = MOU layer ("mouse" node in toucan.keymap); touch = click layer
+            bindings  = <&mo 5>;            // Layer index 5 = MOU layer (layer 5 in toucan.keymap); touch = click layer
         };
 
         swipe_button_mapper: swipe_button_mapper {

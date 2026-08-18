@@ -4,11 +4,11 @@
 #include <dt-bindings/zmk/pointing.h>
 
 #define BASE 0
-#define SYM  1
-#define NAV  2
-#define ADJ  3
-#define MOU  4
-#define COL  5
+#define COL  1
+#define SYM  2
+#define NAV  3
+#define ADJ  4
+#define MOU  5
 
 / {
     conditional_layers {
@@ -29,6 +29,19 @@
 &kp TAB        &kp Q  &kp W  &kp E     &kp R      &kp T    &kp Y    &kp U      &kp I      &kp O    &kp P     &kp BSPC
 &mt LCTRL ESC  &kp A  &kp S  &kp D     &kp F      &kp G    &kp H    &kp J      &kp K      &kp L    &kp SEMI  &kp RET
 &kp LSHFT      &kp Z  &kp X  &kp C     &kp V      &kp B    &kp N    &kp M      &kp COMMA  &kp DOT  &kp FSLH  &kp SINGLE_QUOTE
+                             &kp LGUI  &kp SPACE  &mo SYM  &mo NAV  &kp SPACE  &kp RALT
+            >;
+        };
+
+        // COL is layer 1: directly above BASE so it must stay BELOW SYM/NAV/ADJ
+        // (layers 2-4) in the layer order, otherwise its bindings would shadow the
+        // numbers, arrows and the ADJ toggle (ZMK resolves from the highest layer down).
+        colemak {
+            display-name = "COL";
+            bindings = <
+&kp TAB        &kp Q  &kp W  &kp F     &kp P      &kp G    &kp J    &kp L      &kp U      &kp Y    &kp SEMI  &kp BSPC
+&mt LCTRL ESC  &kp A  &kp R  &kp S     &kp T      &kp D    &kp H    &kp N      &kp E      &kp I    &kp O     &kp RET
+&kp LSHFT      &kp Z  &kp X  &kp C     &kp V      &kp B    &kp K    &kp M      &kp COMMA  &kp DOT  &kp FSLH  &kp SINGLE_QUOTE
                              &kp LGUI  &kp SPACE  &mo SYM  &mo NAV  &kp SPACE  &kp RALT
             >;
         };
@@ -70,19 +83,6 @@
 &trans  &trans    &trans  &trans     &trans     &trans     &trans     &trans     &trans     &trans  &trans  &trans
 &trans  &kp LGUI  &trans  &trans     &trans     &trans     &trans     &trans     &trans     &trans  &trans  &trans
                           &mkp MCLK  &mkp LCLK  &mkp RCLK  &mkp LCLK  &mkp RCLK  &mkp MCLK
-            >;
-        };
-
-        colemak {
-            display-name = "COL";
-            // Tab is &trans here so it falls through to BASE's TAB normally, but reaches
-            // ADJ's &tog COL (layer 5 > layer 3) while ADJ is active - otherwise COL's
-            // TAB would shadow the toggle and the layer could never be toggled off.
-            bindings = <
-&trans       &kp Q  &kp W  &kp F     &kp P      &kp G    &kp J    &kp L      &kp U      &kp Y    &kp SEMI  &kp BSPC
-&mt LCTRL ESC  &kp A  &kp R  &kp S     &kp T      &kp D    &kp H    &kp N      &kp E      &kp I    &kp O     &kp RET
-&kp LSHFT      &kp Z  &kp X  &kp C     &kp V      &kp B    &kp K    &kp M      &kp COMMA  &kp DOT  &kp FSLH  &kp SINGLE_QUOTE
-                             &kp LGUI  &kp SPACE  &mo SYM  &mo NAV  &kp SPACE  &kp RALT
             >;
         };
 
