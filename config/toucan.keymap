@@ -36,6 +36,7 @@
         // COL is layer 1: directly above BASE so it must stay BELOW SYM/NAV/ADJ
         // (layers 2-4) in the layer order, otherwise its bindings would shadow the
         // numbers, arrows and the ADJ toggle (ZMK resolves from the highest layer down).
+
         colemak {
             display-name = "COL";
             bindings = <
@@ -49,10 +50,10 @@
         symbol {
             display-name = "SYM";
             bindings = <
-&kp F1     &kp F2  &kp F3      &kp F4        &kp F5        &kp F6        &kp F7  &kp F8     &kp F9     &kp F10           &kp F11            &kp F12
-&kp GRAVE  &kp N1  &kp N2      &kp N3        &kp N4        &kp N5        &kp N6  &kp N7     &kp N8     &kp N9            &kp N0             &kp DEL
-&trans     &trans  &kp C_MUTE  &kp C_VOL_DN  &kp C_VOL_UP  &kp LEFT_ALT  &trans  &kp MINUS  &kp EQUAL  &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &kp BACKSLASH
-                               &trans        &trans        &trans        &trans  &trans     &trans
+&kp F1      &kp F2      &kp F3      &kp F4        &kp F5        &kp F6        &kp F7  &kp F8     &kp F9     &kp F10           &kp F11            &kp F12
+&kp GRAVE   &kp N1      &kp N2      &kp N3        &kp N4        &kp N5        &kp N6  &kp N7     &kp N8     &kp N9            &kp N0             &kp DEL
+&kp C_PREV  &kp C_NEXT  &kp C_MUTE  &kp C_VOL_DN  &kp C_VOL_UP  &kp LEFT_ALT  &trans  &kp MINUS  &kp EQUAL  &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &kp BACKSLASH
+                                    &trans        &kp C_PP      &trans        &trans  &trans     &trans
             >;
         };
 
